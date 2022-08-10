@@ -1,15 +1,17 @@
 # Test Guru
 
-
-* Create test for users
-
-* Test management
-
 * Authentication
 
-* Basic distribution of access rights
+* Test
 
-* Execution of tests
+* Category 
 
-* Publish results on social media
+* Questions
+
+* Answers
+
+* Result
+
+* User
+
 
