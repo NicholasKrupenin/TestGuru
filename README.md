@@ -1,24 +1,17 @@
-# README
+# Test Guru
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Authentication
 
-Things you may want to cover:
+* Test
 
-* Ruby version
+* Category 
 
-* System dependencies
+* Questions
 
-* Configuration
+* Answers
 
-* Database creation
+* Result
 
-* Database initialization
+* User
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
