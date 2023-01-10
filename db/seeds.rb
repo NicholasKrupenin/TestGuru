@@ -18,37 +18,37 @@ categories = Category.create!([
                              ])
 
 tests = Test.create!([
-                       { title: "Asia", level: 1, category_id: categories[2].id, author_id: users[1].id },
-                       { title: "File permission", level: 3, category_id: categories[0].id, author_id: users[0].id },
-                       { title: "Ganre", level: 2, category_id: categories[3].id, author_id: users[1].id },
-                       { title: "Commit file", level: 3, category_id: categories[1].id, author_id: users[1].id },
+                       { title: "Asia", level: 1, category: categories[2], author: users[1] },
+                       { title: "File permission", level: 3, category: categories[0], author: users[0] },
+                       { title: "Ganre", level: 2, category: categories[3], author: users[1] },
+                       { title: "Commit file", level: 3, category: categories[1], author: users[1] },
                      ])
 
 questions = Question.create!([
-                               { body: "How modify the full permission for the file", test_id: tests[1].id },
-                               { body: "What is the capital of Thailand", test_id: tests[0].id },
-                               { body: "How to commit and add all files of only one command", test_id: tests[3].id },
-                               { body: "What genre the music is play group Thievery Corporation", test_id: tests[2].id }
+                               { body: "How modify the full permission for the file", test: tests[1] },
+                               { body: "What is the capital of Thailand", test: tests[0] },
+                               { body: "How to commit and add all files of only one command", test: tests[3] },
+                               { body: "What genre the music is play group Thievery Corporation", test: tests[2] }
                              ])
 
 answers = Answer.create!([
-                           { body: "chmod 777 <file>", correct: true, question_id: questions[1].id },
-                           { body: "chmod uga+xwr <file>", correct: true, question_id: questions[1].id },
-                           { body: "chmod --add-full permission <file>", question_id: questions[1].id },
-                           { body: "Bangkok", correct: true, question_id: questions[1].id },
-                           { body: "Chiang Mai", question_id: questions[1].id },
-                           { body: "Manila", question_id: questions[1].id },
-                           { body: "Electronic music", correct: true, question_id: questions[3].id },
-                           { body: "Heavy Metal", question_id: questions[3].id },
-                           { body: "Bossa nova", correct: true, question_id: questions[3].id },
-                           { body: "git commit -a", correct: true, question_id: questions[2].id },
-                           { body: "git add + commit", question_id: questions[2].id },
-                           { body: "Expecto Patronum", question_id: questions[2].id },
+                           { body: "chmod 777 <file>", correct: true, question: questions[1] },
+                           { body: "chmod uga+xwr <file>", correct: true, question: questions[1] },
+                           { body: "chmod --add-full permission <file>", question: questions[1] },
+                           { body: "Bangkok", correct: true, question: questions[1] },
+                           { body: "Chiang Mai", question: questions[1] },
+                           { body: "Manila", question: questions[1] },
+                           { body: "Electronic music", correct: true, question: questions[3] },
+                           { body: "Heavy Metal", question: questions[3] },
+                           { body: "Bossa nova", correct: true, question: questions[3] },
+                           { body: "git commit -a", correct: true, question: questions[2] },
+                           { body: "git add + commit", question: questions[2] },
+                           { body: "Expecto Patronum", question: questions[2] },
                          ])
 
 test_users = TestUser.create!([
-                                { user_id: users[1].id, test_id: tests[1].id },
-                                { user_id: users[0].id, test_id: tests[2].id },
-                                { user_id: users[1].id, test_id: tests[3].id },
-                                { user_id: users[0].id, test_id: tests[0].id },
+                                { user: users[1], test: tests[1] },
+                                { user: users[0], test: tests[2] },
+                                { user: users[1], test: tests[3] },
+                                { user: users[0], test: tests[0] },
                               ])
