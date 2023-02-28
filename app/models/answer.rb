@@ -2,7 +2,7 @@ class Answer < ApplicationRecord
   belongs_to :question
 
   validates :body, presence: true
-  validate :validate_answer_limit
+  validate :validate_answer_limit, on: :create
 
   scope :correct, -> { where(correct: true).pluck(:body) }
 
