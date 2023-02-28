@@ -5,9 +5,21 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #Character.create(name: 'Luke', movie: movies.first)
+
+Faker::Config.locale = :en
+
+User.destroy_all 
+Category.destroy_all 
+Test.destroy_all 
+Question.destroy_all 
+Answer.destroy_all 
+TestUser.destroy_all 
+
 users = User.create!([
-                       { name: "root" },
-                       { name: "user" },
+                       { name: Faker::Name.name, email: Faker::Internet.email },
+                       { name: Faker::Name.name, email: Faker::Internet.email },
+                       { name: Faker::Name.name, email: Faker::Internet.email },
+                       { name: Faker::Name.name, email: Faker::Internet.email }
                     ])
 
 categories = Category.create!([
@@ -17,12 +29,13 @@ categories = Category.create!([
                                 { title: "Music" }
                              ])
 
+
 tests = Test.create!([
-                       { title: "Asia", level: 1, category: categories[2], author: users[1] },
-                       { title: "File permission", level: 3, category: categories[0], author: users[0] },
-                       { title: "Ganre", level: 2, category: categories[3], author: users[1] },
-                       { title: "Commit file", level: 3, category: categories[1], author: users[1] },
-                     ])
+                       { title: "Asia", level: 1, category: categories[2], author: users[0] },
+                       { title: "File permission", level: 3, category: categories[0], author: users[1] },
+                       { title: "Ganre", level: 2, category: categories[3], author: users[2] },
+                       { title: "Commit file", level: 4, category: categories[1], author: users[3] },
+                     ])                             
 
 questions = Question.create!([
                                { body: "How modify the full permission for the file", test: tests[1] },
@@ -31,10 +44,11 @@ questions = Question.create!([
                                { body: "What genre the music is play group Thievery Corporation", test: tests[2] }
                              ])
 
+                             
 answers = Answer.create!([
-                           { body: "chmod 777 <file>", correct: true, question: questions[1] },
-                           { body: "chmod uga+xwr <file>", correct: true, question: questions[1] },
-                           { body: "chmod --add-full permission <file>", question: questions[1] },
+                           { body: "chmod 777 <file>", correct: true, question: questions[0] },
+                           { body: "chmod uga+xwr <file>", correct: true, question: questions[0] },
+                           { body: "chmod --add-full permission <file>", question: questions[0] },
                            { body: "Bangkok", correct: true, question: questions[1] },
                            { body: "Chiang Mai", question: questions[1] },
                            { body: "Manila", question: questions[1] },
@@ -47,8 +61,8 @@ answers = Answer.create!([
                          ])
 
 test_users = TestUser.create!([
-                                { user: users[1], test: tests[1] },
-                                { user: users[0], test: tests[2] },
-                                { user: users[1], test: tests[3] },
                                 { user: users[0], test: tests[0] },
+                                { user: users[1], test: tests[1] },
+                                { user: users[2], test: tests[2] },
+                                { user: users[3], test: tests[3] },
                               ])
