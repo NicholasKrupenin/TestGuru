@@ -34,7 +34,7 @@ tests = Test.create!([
                        { title: "Asia", level: 1, category: categories[2], author: users[0] },
                        { title: "File permission", level: 3, category: categories[0], author: users[1] },
                        { title: "Ganre", level: 2, category: categories[3], author: users[2] },
-                       { title: "Commit file", level: 4, category: categories[1], author: users[3] },
+                       { title: "Commit file", level: 4, category: categories[1], author: users[3] }
                      ])                             
 
 questions = Question.create!([
@@ -57,12 +57,12 @@ answers = Answer.create!([
                            { body: "Bossa nova", correct: true, question: questions[3] },
                            { body: "git commit -a", correct: true, question: questions[2] },
                            { body: "git add + commit", question: questions[2] },
-                           { body: "Expecto Patronum", question: questions[2] },
+                           { body: "Expecto Patronum", question: questions[2] }
                          ])
 
 test_users = TestUser.create!([
                                 { user: users[0], test: tests[0] },
                                 { user: users[1], test: tests[1] },
                                 { user: users[2], test: tests[2] },
-                                { user: users[3], test: tests[3] },
+                                { user: users[3], test: tests[3] }
                               ])
