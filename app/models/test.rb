@@ -21,5 +21,10 @@ class Test < ApplicationRecord
   scope :difficult, -> { single_level(4..Float::INFINITY) }
 
   scope :tests_by_category, ->(arg) { joins(:category)
-                                     .where(categories: { title: arg }).order(title: :desc)}
+                                     .where(categories: { title: arg }).order(title: :desc) }
+
+  def self.by_category(category)
+    tests_by_category(category).pluck(:title)
+  end 
 end
+
