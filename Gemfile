@@ -1,11 +1,14 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.2.0'
+ruby '3.0.4'
 
 #gem 'rdoc'
 #gem 'irb'
 
+# Use faker for seed
+gem 'faker', '~> 3.0'
+# Use pry instead irb
 gem 'pry-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.6'
