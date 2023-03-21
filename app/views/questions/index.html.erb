@@ -1,0 +1,14 @@
+<h1>List of questions </h1>
+
+<ul>
+  <% @test.questions.each do |question| %>
+    <li>
+      <%= question.body %> ? <%= button_to "Delete", 
+                                test_question_path(params[:test_id], question),
+                                method: :delete %>
+    </li>
+  <% end %>
+</ul>
+<%= link_to "Add quiestion in #{@test.title} test", new_test_question_path %>
+<br><br>
+<%= link_to "Back", tests_path %>
