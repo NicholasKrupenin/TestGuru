@@ -1,10 +1,10 @@
-<h1>List of questions </h1>
+<h1>List of <%= @test.title %> test questions</h1>
 
 <ul>
   <% @test.questions.each do |question| %>
     <li>
       <%= question.body %> ? <%= button_to "Delete", 
-                                test_question_path(params[:test_id], question),
+                                question_path(question),
                                 method: :delete %>
     </li>
   <% end %>
