@@ -1,0 +1,9 @@
+<h1>List of tests</h1>
+
+<ul>
+  <% @tests.each do |testing| %>
+    <li>
+      <%= link_to testing.title, test_questions_path(testing) %>
+    </li>
+  <% end %>
+</ul>

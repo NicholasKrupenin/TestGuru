@@ -1,0 +1,9 @@
+<h1> New questions</h1>
+
+<ul>
+   Your question "<%=@question.body%>" created in <%=@question.test.title%> test
+</ul>
+
+<%= link_to "Back to root", root_path %>
+<br>
+<%= link_to "Back to test", test_questions_path(@question.test) %>
