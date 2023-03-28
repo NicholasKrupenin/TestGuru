@@ -1,9 +1,6 @@
-<h1> New questions</h1>
+<%= question_header %>
 
-<%= form_with model: [@test, @question], method: :post do |form| %>
-  <%= form.text_field :body %>
-  <%= form.submit "Create" %>
-<% end %>
+<%= render "form", prefix: [@test, @question], verb: :post%>
 
 <br>
 

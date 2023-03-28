@@ -1,0 +1,6 @@
+<%= form_with model: prefix, method: verb do |form| %>
+  <%= form.label :text, "Write:" %>
+  <%= form.text_field :body, id: :question_text %>
+  <%= form.submit "Update" %>
+
+<% end %>

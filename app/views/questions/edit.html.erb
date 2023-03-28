@@ -1,0 +1,7 @@
+<%= question_header %>
+
+<%= render "form", prefix: [@question], verb: :put%>
+
+<br>
+
+<%= link_to "Back", test_questions_path(@question.test) %>

@@ -1,9 +1,20 @@
-<h1>List of tests</h1>
+ <h1>List of tests</h1>
 
-<ul>
-  <% @tests.each do |testing| %>
-    <li>
-      <%= link_to testing.title, test_questions_path(testing) %>
-    </li>
-  <% end %>
-</ul>
+<%= render "shared/style" %>
+
+  <tr>
+    <th> <b>Test</b> </th>
+    <th colspan="2" > <b>What to do </th>
+    <th> <b>Number of question</b> </th>
+  </tr>
+<% @tests.each do |testing| %>
+  <tr>
+    <td><%= link_to testing.title, test_questions_path(testing) %></td>
+    <td><%= link_to 'Update', edit_test_path(testing) %></td>
+    <td><%= link_to 'Delete', test_path(testing), method: :delete%></td>
+    <td><%= testing.questions.count %></td>
+  </tr>
+<% end %>
+</table>
+<br><br>
+<%= link_to '>> Create new test', new_test_path %>

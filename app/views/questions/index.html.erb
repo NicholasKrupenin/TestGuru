@@ -1,14 +1,24 @@
 <h1>List of <%= @test.title %> test questions</h1>
 
-<ul>
-  <% @test.questions.each do |question| %>
-    <li>
-      <%= question.body %> ? <%= button_to "Delete", 
-                                question_path(question),
-                                method: :delete %>
-    </li>
-  <% end %>
-</ul>
+<%= render "shared/style" %>
+
+  <tr>
+    <th> <b>Question</b> </th>
+    <th colspan="2" > <b>What to do </th>
+  </tr>
+<% @test.questions.each do |question| %>
+  <tr>
+
+    <td><%= question.body %></td>
+    <td><%= link_to 'Update', edit_question_path(question) %></td>
+    <td><%= link_to 'Delete', question_path(question), method: :delete%></td>
+
+  </tr>
+<% end %>
+</table>
+
+<br><br>
+
 <%= link_to "Add quiestion in #{@test.title} test", new_test_question_path %>
 
 <br><br>
