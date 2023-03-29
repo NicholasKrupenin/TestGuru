@@ -1,9 +1,21 @@
-<h1> New test</h1>
+<h1>List of <%= @test.title %> test questions</h1>
 
-<ul>
-   Your test - "<%=@test.title%>" created
-</ul>
+<%= render "shared/style" %>
 
-<%= link_to "Back to test", root_path %>
+<table style="width:70%">
+  <tr>
+    <th> <b>Question</b> </th>
+    <th colspan="2" > <b>What to do </th>
+  </tr>
 
+<%= render partial: "question", collection: @test.questions %>
 
+</table>
+
+<br><br>
+
+<%= link_to "Add quiestion in #{@test.title} test", new_test_question_path(@test) %>
+
+<br><br>
+
+<%= link_to "Back", tests_path %>

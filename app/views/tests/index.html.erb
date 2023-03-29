@@ -2,19 +2,18 @@
 
 <%= render "shared/style" %>
 
+<table style="width:70%">
   <tr>
     <th> <b>Test</b> </th>
     <th colspan="2" > <b>What to do </th>
     <th> <b>Number of question</b> </th>
   </tr>
-<% @tests.each do |testing| %>
-  <tr>
-    <td><%= link_to testing.title, test_questions_path(testing) %></td>
-    <td><%= link_to 'Update', edit_test_path(testing) %></td>
-    <td><%= link_to 'Delete', test_path(testing), method: :delete%></td>
-    <td><%= testing.questions.count %></td>
-  </tr>
-<% end %>
+
+<%= render @tests %>
+
 </table>
 <br><br>
 <%= link_to '>> Create new test', new_test_path %>
+
+
+

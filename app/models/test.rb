@@ -6,8 +6,6 @@ class Test < ApplicationRecord
   has_many :questions, dependent: :destroy
   has_many :users, through: :test_users
 
-  accepts_nested_attributes_for :questions, allow_destroy: true
-
   validates :title, presence: true,
                     uniqueness: { scope: :level,
                                   message: '%<attribute>s - %<value>s not unique' }
