@@ -8,14 +8,13 @@
     <th colspan="2" > <b>What to do </th>
   </tr>
 
-<%= render partial: "question", collection: @test.questions %>
-
+<%= render partial: "questions/question", collection: @test.questions %>
 </table>
 
 <br><br>
 
 <%= link_to "Add quiestion in #{@test.title} test", new_test_question_path(@test) %>
-https://github.com/NicholasKrupenin/TestGuru/pull/10
+
 <br><br>
 
 <%= link_to "Back", tests_path %>
