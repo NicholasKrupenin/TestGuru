@@ -1,14 +1,12 @@
 <h1>List of <%= @test.title %> test questions</h1>
 
-<%= render "shared/style" %>
-
 <table style="width:70%">
   <tr>
     <th> <b>Question</b> </th>
     <th colspan="2" > <b>What to do </th>
   </tr>
 
-<%= render partial: "questions/question", collection: @test.questions %>
+<%= render @test.questions %>
 </table>
 
 <br><br>
