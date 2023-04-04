@@ -1,0 +1,20 @@
+<%= form_with model: [@test], method: verb do |form| %>
+
+  <%= form.label :text, "Write:" %>
+  <%= form.text_field :title, id: :test_text %>
+
+  <%= form.label :level, "Level:" %>
+  <%= form.number_field :level, id: :test_level %>
+
+  <%= form.label :category_id, "Category:" %>
+  <%= form.collection_select :category_id, Category.all, :id, :title%>
+
+  <%= form.label :author_id, "Author:" %>
+  <%= form.collection_select :author_id, User.all, :id, :name%>
+
+  <%= form.submit "Create" %>
+<% end %>
+
+<br>
+
+<%= link_to "Back", root_path %>
