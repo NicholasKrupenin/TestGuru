@@ -2,9 +2,9 @@ class Test < ApplicationRecord
   belongs_to :author, class_name: 'User'
   belongs_to :category
 
-  has_many :test_users, dependent: :destroy
   has_many :questions, dependent: :destroy
-  has_many :users, through: :test_users
+  has_many :test_passages, dependent: :destroy
+  has_many :users, through: :test_passages
 
   validates :title, presence: true,
                     uniqueness: { scope: :level,
@@ -27,4 +27,3 @@ class Test < ApplicationRecord
     tests_by_category(category).pluck(:title)
   end 
 end
-

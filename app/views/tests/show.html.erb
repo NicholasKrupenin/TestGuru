@@ -1,6 +1,6 @@
 <h1>List of <%= @test.title %> test questions</h1>
 
-<table style="width:70%">
+<table>
   <tr>
     <th> <b>Question</b> </th>
     <th colspan="2" > <b>What to do </th>
@@ -10,9 +10,6 @@
 </table>
 
 <br><br>
-
-<%= link_to "Add quiestion in #{@test.title} test", new_test_question_path(@test) %>
-
+<%= link_to "Add quiestion", new_test_question_path(@test) %>
 <br><br>
-
 <%= link_to "Back", tests_path %>
