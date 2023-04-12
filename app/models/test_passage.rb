@@ -3,7 +3,9 @@ class TestPassage < ApplicationRecord
   belongs_to :test
   belongs_to :current_question, class_name: 'Question', optional: true
 
-  before_validation :before_validation_set_current_question, on: [ :create, :update ]
+  before_validation :before_validation_set_current_question, on: %i[create update]
+
+  SUCCESS_RATIO = 85
 
   def completed?
     current_question.nil?
@@ -14,12 +16,16 @@ class TestPassage < ApplicationRecord
     save!
   end
 
-  def success_rate
+  def test_ratio
     (correct_questions.to_f / test.questions.count) * 100
   end
 
+  def successful?
+    test_ratio >= SUCCESS_RATIO
+  end
+
   def current_question_number
-    test.questions.order(:id).where('id <= ?', current_question.id).count
+    test.questions.order(:id).where('id <= ?',current_question.id).count
   end
 
   def total_questions
@@ -33,10 +39,8 @@ class TestPassage < ApplicationRecord
   end
 
   def correct_answer?(answer_ids)
-    if answer_ids.nil?
-      return false
-    else
-      correct_answers.ids.sort == answer_ids.map(&:to_i).sort
+    if answer_ids.present? && correct_answers.ids.present?
+    correct_answers.ids.sort == answer_ids.to_a.map(&:to_i).sort
     end
   end
 
@@ -48,7 +52,7 @@ class TestPassage < ApplicationRecord
     if current_question.nil?
       test.questions.first
     else
-      test.questions.order(:id).where('id > ?', current_question.id).first
+      test.questions.order(:id).where('id > ?',current_question.id).first
     end
   end
 end
