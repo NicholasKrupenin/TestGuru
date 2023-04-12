@@ -1,9 +1,11 @@
 module AnswersHelper
   def answer_header(answer)
     if answer.persisted?
-      "Edit answer to a question: #{answer.question.body[0,20]}..."
+      truncate("Edit answer to a question: #{answer.question.body}",
+               length: 60, separator: ' ')
     else
-      "Create a new answer to a question: #{answer.question.body[0,20]}..."
+      truncate("Create a new answer to a question: #{answer.question.body}",
+               length: 60, separator: ' ')
     end
   end
 end
