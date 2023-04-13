@@ -1,0 +1,9 @@
+<%= answer_header(@answer) %>
+<br><br>
+<%= form_with model: [@question, @answer], method: verb do |form| %>
+  <%= form.label :text, "Write:" %>
+  <%= form.text_field :body, id: :answer_text %>
+  <%= form.label :correct, "Correct ?" %>
+  <%= form.check_box :correct, id: :answer_correct %>
+  <%= form.submit "Update" %>
+<% end %>

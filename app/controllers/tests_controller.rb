@@ -1,5 +1,5 @@
 class TestsController < ApplicationController
-  before_action :find_test, only: %i[show edit update destroy]
+  before_action :find_test, only: %i[show edit update destroy start]
 
   def index
     @tests = Test.all
@@ -35,6 +35,11 @@ class TestsController < ApplicationController
     redirect_to root_path
   end
 
+  def start
+    current_user.tests.push(@test)
+    redirect_to current_user.test_passage(@test)
+  end
+
   private
 
   def find_test
@@ -43,6 +48,10 @@ class TestsController < ApplicationController
 
   def test_params
     params.require(:test).permit(:title, :level, :category_id, :author_id)
+  end
+
+  def current_user
+    @current_user ||= User.first
   end
 
 end

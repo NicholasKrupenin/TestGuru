@@ -13,7 +13,7 @@ Category.destroy_all
 Test.destroy_all 
 Question.destroy_all 
 Answer.destroy_all 
-TestUser.destroy_all 
+#TestUser.destroy_all 
 
 users = User.create!([
                        { name: Faker::Name.name, email: Faker::Internet.email },
@@ -60,9 +60,9 @@ answers = Answer.create!([
                            { body: "Expecto Patronum", question: questions[2] }
                          ])
 
-test_users = TestUser.create!([
-                                { user: users[0], test: tests[0] },
-                                { user: users[1], test: tests[1] },
-                                { user: users[2], test: tests[2] },
-                                { user: users[3], test: tests[3] }
-                              ])
+# test_users = TestUser.create!([
+#                                 { user: users[0], test: tests[0] },
+#                                 { user: users[1], test: tests[1] },
+#                                 { user: users[2], test: tests[2] },
+#                                 { user: users[3], test: tests[3] }
+#                               ])

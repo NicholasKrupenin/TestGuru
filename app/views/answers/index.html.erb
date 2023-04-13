@@ -1,0 +1,11 @@
+<h1>Answers</h1>
+
+<li>
+  <%= answer.body %><br>
+  <%= link_to 'Edit', edit_answer_path(answer) %>
+  <%= link_to 'Edit', edit_answer_path(answer) %>
+  <%= link_to 'Delete', answer_path(answer), method: :delete,
+                        data: { confirm: 'Are you sure?' } %>
+</li>
+
+<%= link_to 'New Answer', new_answer_path %>
