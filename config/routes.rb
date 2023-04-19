@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
+  root 'tests#index'
+  get :signup, to: 'users#new'
+  get :login, to: 'sessions#new'
 
-  root "tests#index"
+  resources :users, only: %i[new create]
+
+  resource :session, only: %i[create destroy]
 
   resources :tests, shallow: true do
     post :start, on: :member
@@ -9,7 +14,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :test_passages, only: %i[ show update ] do
+  resources :test_passages, only: %i[show update] do
     get :result, on: :member
   end
 end
