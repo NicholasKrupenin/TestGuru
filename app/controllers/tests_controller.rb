@@ -49,9 +49,4 @@ class TestsController < ApplicationController
   def test_params
     params.require(:test).permit(:title, :level, :category_id, :author_id)
   end
-
-  def current_user
-    @current_user ||= User.first
-  end
-
 end

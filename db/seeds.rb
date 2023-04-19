@@ -16,10 +16,10 @@ Answer.destroy_all
 #TestUser.destroy_all 
 
 users = User.create!([
-                       { name: Faker::Name.name, email: Faker::Internet.email },
-                       { name: Faker::Name.name, email: Faker::Internet.email },
-                       { name: Faker::Name.name, email: Faker::Internet.email },
-                       { name: Faker::Name.name, email: Faker::Internet.email }
+                       { name: Faker::Name.name, email: Faker::Internet.email, password_digest: Faker::Internet.password },
+                       { name: Faker::Name.name, email: Faker::Internet.email, password_digest: Faker::Internet.password },
+                       { name: Faker::Name.name, email: Faker::Internet.email, password_digest: Faker::Internet.password },
+                       { name: Faker::Name.name, email: Faker::Internet.email, password_digest: Faker::Internet.password }
                     ])
 
 categories = Category.create!([
