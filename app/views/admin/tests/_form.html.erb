@@ -1,4 +1,4 @@
-<%= form_with model: [@test], method: verb do |form| %>
+<%= form_with model: [:admin, @test], method: verb do |form| %>
 
   <%= form.label :text, "Write:" %>
   <%= form.text_field :title, id: :test_text %>
@@ -9,12 +9,12 @@
   <%= form.label :category_id, "Category:" %>
   <%= form.collection_select :category_id, Category.all, :id, :title%>
 
-  <%= form.label :author_id, "Author:" %>
-  <%= form.collection_select :author_id, User.all, :id, :name%>
+  <% form.label :author_id, "Author:" %>
+  <%= form.collection_select :author_id, User.all, :id, :name, {selected: current_user.id} %>
 
   <%= form.submit "Create" %>
 <% end %>
 
 <br>
 
-<%= link_to "Back", root_path %>
+<%= link_to "Back", admin_tests_path %>

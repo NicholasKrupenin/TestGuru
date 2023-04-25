@@ -1,7 +1,7 @@
 <div class="header">
-  Welcome, <% if logged_in? %>
-    <%= current_user.name %> Guru <%= button_to "Sign out", session_path, method: :delete, class: "button" %>
+  Welcome, <% if user_signed_in? %>
+    <%= mail_name(current_user.email) %> Guru <%= button_to "Logout", destroy_user_session_path, method: :delete, class: :button %>
   <% else %>
-    to <%= link_to "TestGuru", root_path %> |<%= link_to "Signup", signup_path %>|<%= link_to "Login", login_path %>
+    to <%= link_to "TestGuru", root_path %> |<%= link_to "Signin", new_user_registration_path %>|<%= link_to "Login", new_user_session_path %>
   <% end %>
 </div>

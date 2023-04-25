@@ -15,7 +15,7 @@ module ApplicationHelper
     Time.current.year
   end
 
-  def flash_message(type)
-    content_tag :div, flash[type], class: "flash #{type}" if flash[type]
+  def mail_name(mail)
+    mail.split('@').first
   end
 end
