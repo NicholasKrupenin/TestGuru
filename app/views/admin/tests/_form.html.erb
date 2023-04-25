@@ -9,7 +9,7 @@
   <%= form.label :category_id, "Category:" %>
   <%= form.collection_select :category_id, Category.all, :id, :title%>
 
-  <% form.label :author_id, "Author:" %>
+  <%= form.label :author_id, "Dafault author:" %>
   <%= form.collection_select :author_id, User.all, :id, :name, {selected: current_user.id} %>
 
   <%= form.submit "Create" %>
