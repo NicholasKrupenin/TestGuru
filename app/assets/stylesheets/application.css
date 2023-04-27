@@ -32,11 +32,9 @@
   font-weight: bold;
 }
 
-.button{
+  .button{
   background-color: red;
-  color: black;
   position: relative;
-  left: 40px;
 }
 
 .alert{
@@ -44,4 +42,8 @@
   background-color: red;
   border-radius: 5px;
   width: 12%;
+}
+
+.table{
+  text-align: center;
 }

@@ -1,0 +1,5 @@
+<div class="header">
+  Welcome,
+  <%= mail_name(current_user.email) %> Guru <%= button_to "Logout",
+                            destroy_user_session_path, method: :delete, class: :button %>
+</div>

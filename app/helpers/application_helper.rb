@@ -18,4 +18,8 @@ module ApplicationHelper
   def flash_message(type)
     content_tag :div, flash[type], class: "flash #{type}" if flash[type]
   end
+
+  def mail_name(mail)
+    mail.split('@').first
+  end
 end
