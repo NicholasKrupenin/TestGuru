@@ -10,7 +10,6 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in_path_for(_resource)
-    flash[:notice] = "Welcome #{current_user.first_name}! You are logged in as #{current_user.type}!"
     current_user.kind_of?(Admin) ? admin_tests_path : tests_path
   end
 end
