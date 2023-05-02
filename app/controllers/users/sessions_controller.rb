@@ -6,4 +6,3 @@ class Users::SessionsController < Devise::SessionsController
     flash[:notice] = t('.logged', name: current_user.first_name, type: current_user.type)
   end
 end
-#'controllers.users.sessions.create.logged'
