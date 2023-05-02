@@ -1,0 +1,131 @@
+ru:
+  hello: "Привет мир"
+
+  base:
+    next: "Далее"
+    back: "Назад"
+    create: "Создать"
+    read: "Просмотр"
+    update: "Редактировать"
+    delete: "Удалить"
+    delete_confirm: "Вы уверены?"
+
+  helpers:
+    submit:
+      test:
+        create: "Создать Тест"
+        update: "Обновить Тест"
+      question:
+        create: "Создать Вопрос"
+        update: "Обновить Вопрос"
+      answer:
+        create: "Создать Ответ"
+        update: "Обновить Ответ"
+    label:
+      test:
+        text: "Название"
+        level: "Уровень"
+        category_id: "Категория"
+        author_id: "Автор"
+      question:
+        text: "Содержание вопроса"
+      answer:
+        text: "Текст ответа"
+        correct: "Корректно"
+    prompts:
+      Unix: "Юникс"
+
+  users:
+    sessions:
+      create:
+        logged: "Добро пожаловать %{name}! Вы вошли как %{type}."
+
+  shared:
+    footer:
+      year: "Год"
+      git_page: "Страница на гитхабе"
+      author: "Автор"
+      name: "Крупени Николай"
+      school: "Онлайн-школа"
+      about: "Учебный проект в онлайн-школе Thinknetica."
+    admin:
+      panel: "Панель администратора"
+    errors:
+      header:
+        few: "Обнаружено %{count} ошибки"
+        many: "Обнаружено %{count} ошибок"
+        one: "Обнаружена %{count} ошибка"
+        other: "Обнаружено %{count} ошибки"
+
+  tests:
+    index:
+      header: "Все тесты"
+      title: "Название"
+      questions: "Вопросы"
+      actions: "Действия"
+    test:
+      start: "Старт"
+
+  test_passages:
+    result:
+      header: "Тест %{title} успешно завершён!"
+      result: "Результат"
+      test_passed: "Тест пройден успешно"
+      test_failed: "Тест не пройден"
+      back_to_tests: "Вернуться к тестам"
+    show:
+      passing: "Прохождение"
+      test: "теста"
+      next: "Далее"
+      back: "Назад к тестам"
+
+  admin:
+    tests:
+      edit:
+        header: "Изменить тест"
+      index:
+        header: "Все тесты"
+        title: "Название"
+        questions: "Вопросы"
+        actions: "Действия"
+      new:
+        header: "Создание нового теста"
+      test:
+        start: "Старт"
+      show:
+        questions: "Вопросы"
+        actions: "Действия"
+        new_question: "Новый вопрос"
+        edit_test: "Изменить тест"
+    nav:
+      welcome: "Добро пожаловать"
+      logout: "Выйти"
+
+    questions:
+      new:
+        header: "Новый вопрос"
+      show:
+        header: "Вопросы теста %{title}"
+        answers: "Ответы"
+        actions: "Действия"
+        new_answer: "Новый ответ"
+        back_question: "Назад к вопросу"
+      form:
+        header: "Изменить вопрос по тесту"
+
+    answers:
+      show:
+        answer: "Ответ на вопрос %{title}"
+        correct: "Корректно"
+      form:
+        header: "Изменить ответ на вопрос %{title}"
+
+  tests_mailer:
+    completed_test:
+      subject: "Вы успешно завершили тест на TestGuru!"
+
+  categories:
+    Unix: "Юникс"
+    Git: "Гит"
+    Country: "Страны"
+    Music: "Музыка"

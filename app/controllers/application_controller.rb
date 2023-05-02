@@ -2,8 +2,31 @@ class ApplicationController < ActionController::Base
   skip_before_action :verify_authenticity_token
   before_action :authenticate_user!
   before_action :configure_permitted_parameters, if: :devise_controller?
+  #around_action :switch_locale
+  before_action :switch_locale
+
+  def default_url_options
+    { locale: I18n.locale }
+  end
 
   private
+
+  # def switch_locale(&action)
+  #   locale = params[:locale] || I18n.default_locale
+  #   I18n.with_locale(locale, &action)
+  # end
+
+  # def default_url_options(options = {})
+  #   if I18n.default_locale != I18n.locale
+  #     { locale: I18n.locale }.merge options
+  #   else
+  #     { locale: nil }.merge options
+  #   end
+  # end
+  #
+  def switch_locale
+    I18n.locale = I18n.locale_available?(params[:locale]) ? params[:locale] : I18n.default_locale
+  end
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: %i[name first_name last_name])

@@ -8,12 +8,12 @@
 
 Faker::Config.locale = :en
 
-User.destroy_all 
-Category.destroy_all 
-Test.destroy_all 
-Question.destroy_all 
-Answer.destroy_all 
-#TestUser.destroy_all 
+User.destroy_all
+Category.destroy_all
+Test.destroy_all
+Question.destroy_all
+Answer.destroy_all
+#TestUser.destroy_all
 
 users = User.create!([
                        { name: Faker::Name.first_name, email: Faker::Internet.email, password: Faker::Internet.password },

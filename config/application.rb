@@ -15,8 +15,8 @@ module TestGuru
     #
     # These settings can be overridden in specific environments using the files
     # in config/environments, which are processed later.
-    #
-    config.i18n.available_locales = [:en, :ru]
+    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
+    config.i18n.available_locales = %i[en ru]
     config.i18n.default_locale = :ru
     config.time_zone = "Baku"
     # config.eager_load_paths << Rails.root.join("extras")

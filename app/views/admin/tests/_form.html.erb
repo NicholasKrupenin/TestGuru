@@ -1,17 +1,17 @@
 <%= form_with model: [:admin, @test], method: verb do |form| %>
 
-  <%= form.label :text, "Write:" %>
+  <%= form.label :text %>
   <%= form.text_field :title, id: :test_text %>
 
-  <%= form.label :level, "Level:" %>
+  <%= form.label :level %>
   <%= form.number_field :level, id: :test_level %>
 
-  <%= form.label :category_id, "Category:" %>
+  <%= form.label :category_id %>
   <%= form.collection_select :category_id, Category.all, :id, :title%>
 
-  <%= form.submit "Create" %>
+  <%= form.submit %>
 <% end %>
 
 <br>
 
-<%= link_to "Back", admin_tests_path %>
+<%= link_to t(:back, scope: :base), admin_tests_path %>

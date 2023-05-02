@@ -1,3 +1,3 @@
 <%= render 'form', verb: :put %>
 <br><br>
-<%= link_to 'Back', admin_question_path(@answer.question) %>
+<%= link_to t(:back, scope: :base), admin_question_path(@answer.question) %>
