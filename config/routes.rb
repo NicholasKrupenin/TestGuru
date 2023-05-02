@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  #root to: redirect("/#{I18n.default_locale}"), as: :redirected_root
-
-  #scope ':locale', locale: /#{I18n.available_locales.join('|')}/ do
     root to: 'tests#index'
 
     devise_for :users, path: :gurus, path_names: { sign_in: :login, sign_out: :logout },
@@ -22,5 +19,4 @@ Rails.application.routes.draw do
         end
       end
     end
-  #end
 end
