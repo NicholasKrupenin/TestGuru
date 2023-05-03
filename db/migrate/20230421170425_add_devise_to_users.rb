@@ -28,8 +28,8 @@ class AddDeviseToUsers < ActiveRecord::Migration[6.1]
 
       ## Custom
       t.string :type, null: false, default: "Admin"
-      t.string :first_name
-      t.string :last_name
+      t.string :first_name, null: false, default: "Zzz"
+      t.string :last_name, null: false, default: "Zzz"
 
       ## Lockable
       # t.integer  :failed_attempts, default: 0, null: false # Only if lock strategy is :failed_attempts

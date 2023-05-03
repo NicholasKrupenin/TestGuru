@@ -1,9 +1,9 @@
-<h1> Question - <%= @question.body %> </h1>
+<h1><%= t('.header', title: @question.body) %></h1>
 
 <table>
   <tr>
-    <th> <b>Answer</b> </th>
-    <th colspan="3" > <b>What to do </th>
+    <th><b><%= t('.answers') %></b></th>
+    <th colspan="3" ><b><%= t('.actions') %></b></th>
   </tr>
 
   <%= render @question.answers %>
@@ -11,8 +11,8 @@
 </table>
 
 <br><br>
-<%= link_to "Add answer", new_admin_question_answer_path(@question) %>
+<%= link_to t(:create, scope: :base), new_admin_question_answer_path(@question) %>
 <br><br>
-<%= link_to "Back to question", admin_test_path(@question.test) %>
+<%= link_to t('.back_question'), admin_test_path(@question.test) %>
 <br><br>
-<%= link_to "Back to test", admin_test_path %>
+<%= link_to t(:back, scope: :base), admin_tests_path %>

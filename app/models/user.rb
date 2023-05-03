@@ -6,7 +6,7 @@ class User < ApplicationRecord
   has_many :test_passages, dependent: :destroy
   has_many :tests, through: :test_passages
 
-  validates :email, presence: true, uniqueness: {scope: :email, message: 'Email already exists'},
+  validates :email, presence: true, uniqueness: { scope: :email, message: 'Email already exists' },
                         format: { with: URI::MailTo::EMAIL_REGEXP, message: 'Email is invalid' }
 
   def tests_level(level)

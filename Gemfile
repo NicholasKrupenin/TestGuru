@@ -29,6 +29,8 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
+#
+gem 'rails-i18n', '~> 6.0' # internationalization
 
 gem 'devise', '~> 4.0' # authentication
 # Reduces boot times through caching; required in config/boot.rb
@@ -50,6 +52,7 @@ group :development do
   gem 'spring'
   gem 'overcommit', '~> 0.60' # manage git hooks
   gem 'letter_opener' # open emails
+  gem 'i18n-debug' # debug i18n
 end
 
 group :test do

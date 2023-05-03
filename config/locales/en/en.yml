@@ -1,0 +1,156 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# The following keys must be escaped otherwise they will not be retrieved by
+# the default I18n backend:
+#
+# true, false, on, off, yes, no
+#
+# Instead, surround them with single quotes.
+#
+# en:
+#   'true': 'foo'
+#
+# To learn more, please read the Rails Internationalization guide
+# available at https://guides.rubyonrails.org/i18n.html.
+
+en:
+  hello: "Hello world"
+
+  base:
+    next: "Next"
+    back: "Back"
+    create: "Create"
+    read: "Show"
+    update: "Edit"
+    delete: "Delete"
+    delete_confirm: "Are you sure?"
+
+  helpers:
+    submit:
+      test:
+        create: "Create Test"
+        update: "Update Test"
+      question:
+        create: "Create Question"
+        update: "Update Question"
+      answer:
+        create: "Create Answer"
+        update: "Update Answer"
+    label:
+      test:
+        text: "Title"
+        level: "Level"
+        category_id: "Category"
+        author_id: "Author"
+      question:
+        text: "Question"
+      answer:
+        text: "Answer"
+        correct: "Correct"
+
+  users:
+    sessions:
+      create:
+        logged: "Welcome %{name}! You are logged in as %{type}."
+
+  shared:
+    footer:
+      year: "Year"
+      git_page: "Git page"
+      author: "Author"
+      name: "Krupeni Nikolay"
+      school: "Online school"
+      about: "Training project in the online school Thinknetica."
+    admin:
+      panel: "Admin panel"
+    errors:
+      header:
+        one: "Found %{count} error"
+        other: "Found %{count} errors"
+
+  tests:
+    index:
+      header: "All tests"
+      title: "Title"
+      questions: "Questions"
+      actions: "Actions"
+    test:
+      start: "Start"
+
+  test_passages:
+    result:
+      header: "The %{title} test is successfully completed!"
+      result: "Result"
+      test_passed: "Test passed"
+      test_failed: "Test failed"
+      back_to_tests: "Back to tests"
+    show:
+      passing: "Passing test"
+      test: "test"
+
+  admin:
+    tests:
+      edit:
+        header: "Edit test"
+      index:
+        header: "All tests"
+        title: "Title"
+        questions: "Questions"
+        actions: "Actions"
+      new:
+        header: "New test"
+      test:
+        start: "Start"
+      show:
+        questions: "Questions"
+        actions: "Actions"
+        new_question: "New question"
+        edit_test: "Edit test"
+    nav:
+      welcome: "Welcome"
+      logout: "Logout"
+
+    questions:
+      new:
+        header: "New question"
+      show:
+        header: "Test questions %{title}"
+        answers: "Answers"
+        actions: "Actions"
+        new_answer: "New answer"
+        back_question: "Back to questions"
+      form:
+        header: "Edit question"
+
+    answers:
+      show:
+        answer: "Answer to the question %{title}"
+        correct: "Correct"
+      form:
+        header: "Change the answer to the question %{title}"
+
+  tests_mailer:
+    completed_test:
+      subject: "You have completed the test!"
+
+  categories:
+    Unix: "Unix"
+    Git: "Git"
+    Country: "Country"
+    Music: "Music"

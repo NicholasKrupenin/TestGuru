@@ -1,15 +1,15 @@
-<h1>List of <%= @test.title %> test questions</h1>
+<h1><%= t('.questions') %></h1>
 
 <table>
   <tr>
-    <th> <b>Question</b> </th>
-    <th colspan="2" > <b>What to do </th>
+    <th><b><%= t('.questions') %></b></th>
+    <th colspan="2" ><b><%= t('.actions') %></th>
   </tr>
 
   <%= render @test.questions %>
 </table>
 
 <br><br>
-<%= link_to "Add quiestion", new_admin_test_question_path(@test) %>
+<%= link_to t(:create, scope: :base), new_admin_test_question_path(@test) %>
 <br><br>
-<%= link_to "Back", admin_tests_path %>
+<%= link_to t(:back, scope: :base), admin_tests_path %>

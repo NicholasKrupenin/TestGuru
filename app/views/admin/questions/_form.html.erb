@@ -1,7 +1,7 @@
-<%= question_header(@question) %>
-
+<h1><%= t('.header') %></h1>
+<br><br>
 <%= form_with model: [:admin, @test, @question], method: verb do |form| %>
-  <%= form.label :text, "Write:" %>
+  <%= form.label :text %>
   <%= form.text_field :body, id: :question_text %>
-  <%= form.submit "Update" %>
+  <%= form.submit %>
 <% end %>
