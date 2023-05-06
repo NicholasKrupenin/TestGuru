@@ -1,9 +1,6 @@
-<footer class="footer">
-  <% #I18n.available_locales.each do |lang|%>
-      <% #link_to t(".lang.#{lang}"), url_for(locale: lang) %> 
-  <% #end %>
+<div class="fixed-bottom bg-body-secondary text-center">
   <p><%= t('.year') %>: <%= now_year %></p>
   <p><%= t('.git_page') %>: <%= github_url('NicholasKrupenin', 'TestGuru') %></p>
   <p><%= t('.author') %>: <%= t('.name') %></p>
   <p><%= t('.school') %>: <a rel=nofollow rel=noopener href="http://thinknetica.com/"><%= t('.about') %></a></p>
-</footer>
+</div>

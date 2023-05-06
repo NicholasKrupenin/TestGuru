@@ -1,9 +1,9 @@
-<h1><%= t('.header', title: @question.body) %></h1>
+<h1 class="text-center"><%= t('.header', title: @question.body) %></h1>
 
-<table>
+<table class = "table table-striped table-bordered text-center">
   <tr>
     <th><b><%= t('.answers') %></b></th>
-    <th colspan="3" ><b><%= t('.actions') %></b></th>
+    <th><b><%= t('.actions') %></b></th>
   </tr>
 
   <%= render @question.answers %>
@@ -11,8 +11,9 @@
 </table>
 
 <br><br>
-<%= link_to t(:create, scope: :base), new_admin_question_answer_path(@question) %>
-<br><br>
-<%= link_to t('.back_question'), admin_test_path(@question.test) %>
-<br><br>
-<%= link_to t(:back, scope: :base), admin_tests_path %>
+
+<div class="d-grid gap-2 d-md-block">
+  <%= link_to t(:create, scope: :base), new_admin_question_answer_path(@question), class: 'btn btn-primary' %>
+  <%= link_to t('.back_question'), admin_test_path(@question.test), class: 'btn btn-primary' %>
+  <%= link_to t(:back, scope: :base), admin_tests_path, class: 'btn btn-primary' %>
+</div>

@@ -1,7 +1,9 @@
 <tbody>
   <tr>
     <td><%= link_to question.body, admin_question_path(question) %></td>
-    <td><%= link_to t(:update, scope: :base), edit_admin_question_path(question) %></td>
-    <td><%= link_to t(:delete, scope: :base), admin_question_path(question), method: :delete, data: { confirm: t(:delete_confirm, scope: :base) } %></td>
+    <td><%= link_to t(:update, scope: :base), edit_admin_question_path(question),
+                                                                class: 'btn btn-outline-primary' %>
+      <%= link_to t(:delete, scope: :base), admin_question_path(question), method: :delete,
+      class: 'btn btn-outline-primary', data: { confirm: t(:delete_confirm, scope: :base) } %></td>
   </tr>
 </tbody>

@@ -29,7 +29,10 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
-#
+
+gem 'jquery-rails' # jquery
+gem 'bootstrap', '~> 5.3.0.alpha3' # bootstrap
+
 gem 'rails-i18n', '~> 6.0' # internationalization
 
 gem 'devise', '~> 4.0' # authentication
