@@ -1,9 +1,11 @@
 <tbody>
   <tr>
     <td><%= answer.body %></td>
-    <td><%= link_to t(:read, scope: :base), admin_answer_path(answer) %></td>
-    <td><%= link_to t(:update, scope: :base), edit_admin_answer_path(answer) %></td>
-    <td><%= link_to t(:delete, scope: :base), admin_answer_path(answer), method: :delete,
-                          data: { confirm: t(:delete_confirm, scope: :base) } %></td>
+    <td><%= link_to t(:read, scope: :base), admin_answer_path(answer),
+                                                           class: 'btn btn-outline-primary' %>
+      <%= link_to t(:update, scope: :base), edit_admin_answer_path(answer),
+                                                           class: 'btn btn-outline-primary' %>
+      <%= link_to t(:delete, scope: :base), admin_answer_path(answer),method: :delete,
+       class: 'btn btn-outline-primary',data: { confirm: t(:delete_confirm, scope: :base) } %></td>
   </tr>
 </tbody>
