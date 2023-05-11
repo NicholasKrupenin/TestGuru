@@ -11,7 +11,7 @@ ru:
     delete_confirm: "Вы уверены?"
 
   gists:
-    success: "Гист создан: %{url}"
+    success: "Гист создан: "
     failure: "Гист не создан"
 
   helpers:

@@ -42,7 +42,7 @@ en:
     delete_confirm: "Are you sure?"
 
   gists:
-    success: "Gist created: %{url}"
+    success: "Gist created:"
     failure: "Gist not created"
 
   helpers:
