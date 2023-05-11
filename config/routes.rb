@@ -2,7 +2,7 @@ Rails.application.routes.draw do
     root to: 'tests#index'
 
     devise_for :users, path: :gurus, path_names: { sign_in: :login, sign_out: :logout },
-                                                         controllers: { sessions: 'users/sessions' }
+                                                        controllers: { sessions: 'users/sessions' }
 
     resources :tests, only: :index do
       post :start, on: :member
@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
     resources :test_passages, only: %i[show update] do
       get :result, on: :member
+      resources :gists, only: :create
     end
 
     namespace :admin do
@@ -18,5 +19,6 @@ Rails.application.routes.draw do
           resources :answers, except: :index
         end
       end
+      resources :gists, only: %i[index destroy]
     end
 end

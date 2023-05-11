@@ -5,7 +5,8 @@
   <span class="navbar-text">
     <p>
       <%= t('.welcome') %>, <%= mail_name(current_user.email) %></b> Guru |
-      <% if current_user.kind_of?(Admin) %>
+    <% if current_user.kind_of?(Admin) %>
+        <%= link_to t('.show_gist'), admin_gists_path %> |
         <%= link_to t('.logout'), destroy_user_session_path, method: :delete %> |
         <%= link_to 'Admin Panel', admin_tests_path %>
       <% else %>

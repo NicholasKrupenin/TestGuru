@@ -1,0 +1,14 @@
+<h1 class="text-center"><%= t('.header') %></h1>
+
+<table class = "table table-striped table-bordered text-center">
+  <tr>
+    <th><b><%= t('.question') %></b></th>
+    <th><b><%= t('.gist') %></b></th>
+    <th><b><%= t('.user') %></b></th>
+  </tr>
+
+  <%= render @gists %>
+
+</table>
+
+<%= link_to t(:back, scope: :base), admin_tests_path, class: 'btn btn-primary' %>

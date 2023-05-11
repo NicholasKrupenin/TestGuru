@@ -18,5 +18,5 @@
     <%= form.submit t(:next, scope: :base) %>
   </p>
 <% end %>
-
+<%= link_to t('.gist'), test_passage_gists_path(@test_passage), method: :post, class: 'btn btn-primary' %>
 <%= link_to t(:back, scope: :base), root_path, class: 'btn btn-primary' %>

@@ -10,6 +10,16 @@ ru:
     delete: "Удалить"
     delete_confirm: "Вы уверены?"
 
+  admin:
+    gists:
+      index:
+        header: "Гист вопросы"
+        question: "Вопросы"
+        gist: "Ссылка на Гист"
+        user: "Пользователь"
+      gist:
+        delete: "Удалить"
+
   gists:
     success: "Гист создан: %{url}"
     failure: "Гист не создан"
@@ -118,15 +128,6 @@ ru:
         back_question: "Назад к вопросу"
       form:
         header: "Изменить вопрос по тесту"
-
-    gists:
-      index:
-        header: "Гист вопросы"
-        question: "Вопросы"
-        gist: "Ссылка на Гист"
-        user: "Пользователь"
-      gist:
-        delete: "Удалить"
 
     answers:
       show:
