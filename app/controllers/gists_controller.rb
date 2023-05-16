@@ -6,8 +6,8 @@ class GistsController < ApplicationController
 
     if result.success?
       Gist.create!(question: @test_passage.current_question, user: current_user,
-                                                                         gist_url: result.show_url)
-      flash[:notice] = "#{t('.success')} #{view_context.link_to result.show_url, result.show_url}"
+                                                                       gist_url: result.show_url)
+      flash[:notice] = t('.success_html', url: result.show_url)
     else
       flash[:alert] = t('.failure')
     end

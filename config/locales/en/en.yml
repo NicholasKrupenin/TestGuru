@@ -42,7 +42,7 @@ en:
     delete_confirm: "Are you sure?"
 
   gists:
-    success: "Gist created:"
+    success_html: "Gist created: <a href=%{url} target=\"_blank\"> link to the created gist </a>"
     failure: "Gist not created"
 
   helpers:
