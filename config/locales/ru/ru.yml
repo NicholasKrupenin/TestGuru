@@ -10,6 +10,10 @@ ru:
     delete: "Удалить"
     delete_confirm: "Вы уверены?"
 
+  gists:
+    success_html: "Гист создан: <a href=%{url} target=\"_blank\"> ссылка на новый гист </a>"
+    failure: "Гист не создан"
+
   helpers:
     submit:
       test:
@@ -78,6 +82,7 @@ ru:
       test: "теста"
       next: "Далее"
       back: "Назад к тестам"
+      gist: "Отправить в Гист"
 
   admin:
     tests:
@@ -100,6 +105,7 @@ ru:
     nav:
       welcome: "Добро пожаловать"
       logout: "Выйти"
+      show_gist: "Показать Гист"
 
     questions:
       new:
@@ -112,6 +118,15 @@ ru:
         back_question: "Назад к вопросу"
       form:
         header: "Изменить вопрос по тесту"
+
+    gists:
+      index:
+        header: "Гист вопросы"
+        question: "Вопросы"
+        gist: "Ссылка на Гист"
+        user: "Пользователь"
+      gist:
+        delete: "Удалить"
 
     answers:
       show:

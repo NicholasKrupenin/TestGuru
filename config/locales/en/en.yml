@@ -41,6 +41,10 @@ en:
     delete: "Delete"
     delete_confirm: "Are you sure?"
 
+  gists:
+    success_html: "Gist created: <a href=%{url} target=\"_blank\"> link to the created gist </a>"
+    failure: "Gist not created"
+
   helpers:
     submit:
       test:
@@ -103,6 +107,7 @@ en:
     show:
       passing: "Passing test"
       test: "test"
+      gist: "Send to Gist"
 
   admin:
     tests:
@@ -125,6 +130,7 @@ en:
     nav:
       welcome: "Welcome"
       logout: "Logout"
+      show_gist: "Show Gists"
 
     questions:
       new:
@@ -137,6 +143,15 @@ en:
         back_question: "Back to questions"
       form:
         header: "Edit question"
+
+    gists:
+      index:
+        header: "Gist questions"
+        question: "Questions"
+        gist: "Gist url"
+        user: "User"
+      gist:
+        delete: "Delete"
 
     answers:
       show:
