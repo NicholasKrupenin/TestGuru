@@ -34,6 +34,7 @@ gem "octokit", "~> 5.0" # github api
 
 gem 'jquery-rails' # jquery
 gem 'bootstrap', '~> 5.3.0.alpha3' # bootstrap
+gem 'octicons_helper' # octicons
 
 gem 'rails-i18n', '~> 6.0' # internationalization
 
