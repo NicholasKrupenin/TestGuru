@@ -56,7 +56,6 @@ group :development do
   gem 'listen', '~> 3.3'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
-  gem 'overcommit', '~> 0.60' # manage git hooks
   gem 'letter_opener' # open emails
   gem 'i18n-debug' # debug i18n
 end
