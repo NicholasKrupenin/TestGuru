@@ -1,37 +1,39 @@
-document.addEventListener('turbolinks:load', function() {
+document.addEventListener('turbolinks:load', () => {
   let sortByTitleButton = document.querySelector('.sort-by-title')
-  if (sortByTitleButton) { sortByTitleButton.addEventListener('click', sortRowsByTitle) }
-})
+  if (sortByTitleButton) { sortByTitleButton.addEventListener('click', () => { new SortTable }) } })
 
-function sortRowsByTitle() {
-  let class_list = Array.from(document.querySelector('table').classList)
-  let table = document.querySelector('table')
-  let rows = table.querySelectorAll('tr')
-  let sortedRows = []
-
-  for (let i = 1; i < rows.length; i++) { sortedRows.push(rows[i]) }
-
-  if (this.querySelector('.octicon-arrow-up').classList.contains('hide')) {
-    sortedRows.sort((a, b) => { return a.querySelector('td').textContent.
-                                                localeCompare(b.querySelector('td').textContent) })
-
-    this.querySelector('.octicon-arrow-up').classList.remove('hide')
-    this.querySelector('.octicon-arrow-down').classList.add('hide')
-
-  } else {
-
-    sortedRows.sort((a, b) => { return b.querySelector('td').textContent.
-                                                localeCompare(a.querySelector('td').textContent) })
-
-    this.querySelector('.octicon-arrow-up').classList.add('hide')
-    this.querySelector('.octicon-arrow-down').classList.remove('hide')
+class SortTable {
+  constructor() {
+    this.class_list = Array.from(document.querySelector('table').classList)
+    this.table = document.querySelector('table')
+    this.rows = this.table.querySelectorAll('tr')
+    this.sortedTable = document.createElement('table')
+    this.sortedRows = []
+    this.sortRowsByTitle()
   }
 
-  let sortedTable = document.createElement('table')
-  class_list.forEach((item) => { sortedTable.classList.add(item) })
-  sortedTable.appendChild(rows[0])
+  sortRowsByTitle() {
+    for (let i = 1; i < this.rows.length; i++) { this.sortedRows.push(this.rows[i]) }
 
-  for (let i = 0; i < sortedRows.length; i++) { sortedTable.appendChild(sortedRows[i]) }
+    if (this.table.querySelector('.octicon-arrow-up').classList.contains('hide')) {
+      this.sortedRows.sort((a, b) => { return a.querySelector('td').textContent.
+                                               localeCompare(b.querySelector('td').textContent) })
 
-  table.parentNode.replaceChild(sortedTable, table)
+      this.table.querySelector('.octicon-arrow-up').classList.remove('hide')
+      this.table.querySelector('.octicon-arrow-down').classList.add('hide')
+    } else {
+      this.sortedRows.sort((a, b) => { return b.querySelector('td').textContent.
+                                               localeCompare(a.querySelector('td').textContent) })
+
+      this.table.querySelector('.octicon-arrow-up').classList.add('hide')
+      this.table.querySelector('.octicon-arrow-down').classList.remove('hide')
+    }
+
+    this.class_list.forEach((item) => { this.sortedTable.classList.add(item) })
+    this.sortedTable.appendChild(this.table.rows[0])
+
+    for (let i = 0; i < this.sortedRows.length; i++) { this.sortedTable.appendChild(this.sortedRows[i]) }
+
+    this.table.parentNode.replaceChild(this.sortedTable, this.table)
+  }
 }
