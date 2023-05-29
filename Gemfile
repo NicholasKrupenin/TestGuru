@@ -13,7 +13,7 @@ gem 'pry-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.6'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3', '~> 1.4'
+#gem 'sqlite3', '~> 1.4'
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
 # Use SCSS for stylesheets
@@ -30,10 +30,13 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
+gem "pg" # postgresql
+
 gem "octokit", "~> 5.0" # github api
 
 gem 'jquery-rails' # jquery
 gem 'bootstrap', '~> 5.3.0.alpha3' # bootstrap
+gem 'octicons_helper' # octicons
 
 gem 'rails-i18n', '~> 6.0' # internationalization
 
@@ -56,7 +59,6 @@ group :development do
   gem 'listen', '~> 3.3'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
-  gem 'overcommit', '~> 0.60' # manage git hooks
   gem 'letter_opener' # open emails
   gem 'i18n-debug' # debug i18n
 end
