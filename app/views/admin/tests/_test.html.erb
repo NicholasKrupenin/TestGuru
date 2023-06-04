@@ -1,10 +1,11 @@
 <tbody>
   <tr>
-    <td><%= content_tag :span, test.title, class: 'test-title', data: {test_id: test.id } %>
+    <td><%= link_to test.title, admin_test_path(test), method: :get, class: 'test-title',
+                                                                     data: {test_id: test.id} %>
         <%= render 'form_inline', test: test == @test ? @test : test %>
     </td>
     <td><%= link_to t(:update, scope: :base), edit_admin_test_path(test),
-                     class: 'btn btn-outline-primary form-inline-link', data: {test_id: test.id} %>
+                     class: 'btn btn-outline-primary table-patch-link', data: {test_id: test.id} %>
         <%= link_to t(:delete, scope: :base), admin_test_path(test), method: :delete,
            class: 'btn btn-outline-primary', data: { confirm: t(:delete_confirm, scope: :base) } %>
         <%= link_to t('.start'), start_test_path(test), method: :post,

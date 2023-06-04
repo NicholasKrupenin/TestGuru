@@ -1,39 +1,24 @@
 document.addEventListener('turbolinks:load', function() {
-  let controls = document.querySelectorAll('.form-inline-link')
-
-  if (controls.length) {
-    for (let i = 0; i < controls.length; i++) {
-      controls[i].addEventListener('click', formInlineLinkHandler)
-    }
-  }
-
-  let errors = document.querySelector('.resource-errors')
-
-  if (errors) {
-    let resourceId = errors.dataset.resourceId
-    formInlineHandler(resourceId)
-  }
+  if (document.querySelectorAll('.table-patch-link')) { new FormInline() }
 })
 
-function formInlineLinkHandler(event) {
-  event.preventDefault()
+class FormInline {
+  constructor() {
+    this.links = document.querySelectorAll('.table-patch-link')
+    this.formInline = document.querySelector('.form-inline')
+    this.testTitle = document.querySelector('.test-title')
+    this.bindEvents()
+  }
 
-  let testId = this.dataset.testId
-  formInlineHandler(testId)
-}
+  bindEvents() {
+    this.links.forEach(link => {
+      link.addEventListener('click', this.formInlineLinkHandler.bind(this))
+    })
+  }
 
-function formInlineHandler(testId) {
-  let link = document.querySelector('.form-inline-link[data-test-id="' + testId + '"]')
-  let testTitle = document.querySelector('.test-title[data-test-id="' + testId + '"]')
-  let formInline = document.querySelector('.form-inline[data-test-id="' + testId + '"]')
-
-  if (formInline.classList.contains('hide')) {
-    testTitle.classList.add('hide')
-    formInline.classList.remove('hide')
-    link.textContent = 'Cancel'
-  } else {
-    testTitle.classList.remove('hide')
-    formInline.classList.add('hide')
-    link.textContent = 'Edit'
+  formInlineLinkHandler(event) {
+    event.preventDefault()
+    this.formInline.classList.toggle('hide')
+    this.testTitle.classList.toggle('hide')
   }
 }
