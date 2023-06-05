@@ -1,9 +1,15 @@
 <h1><%= t('.passing') %> <%= t('.test') %> <%= @test_passage.test.title %></h1>
 
-<b>
+<div>
   <%= @test_passage.current_question.body %> ?
   [<%= @test_passage.current_question_number %> / <%= @test_passage.total_questions %>]
-</b>
+</div>
+
+<div class="progress">
+  <div class="progress-bar" role="progressbar"
+                            data-current-test="<%= @test_passage.current_question_number %>"
+                            data-all-test="<%= @test_passage.total_questions %>"> </div>
+</div>
 
 <%= form_with url: test_passage_path(@test_passage), local: true, method: :put do |form| %>
   <%= form.collection_check_boxes :answer_ids, @test_passage.current_question.answers,

@@ -25,7 +25,7 @@ class TestPassage < ApplicationRecord
   end
 
   def current_question_number
-    test.questions.order(:id).where('id <= ?',current_question.id).count
+    test.questions.order(:id).where('id <= ?', current_question.id).count
   end
 
   def total_questions
@@ -50,7 +50,7 @@ class TestPassage < ApplicationRecord
     if current_question.nil?
       test.questions.first
     else
-      test.questions.order(:id).where('id > ?',current_question.id).first
+      test.questions.order(:id).where('id > ?', current_question.id).first
     end
   end
 end
