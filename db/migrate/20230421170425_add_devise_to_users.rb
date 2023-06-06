@@ -27,9 +27,9 @@ class AddDeviseToUsers < ActiveRecord::Migration[6.1]
       t.string   :unconfirmed_email # Only if using reconfirmable
 
       ## Custom
-      t.string :type, null: false, default: "Admin"
-      t.string :first_name, null: false, default: "Zzz"
-      t.string :last_name, null: false, default: "Zzz"
+      t.string :type, null: false, default: "User"
+      t.string :first_name, null: false, default: ''
+      t.string :last_name, null: false, default: ''
 
       ## Lockable
       # t.integer  :failed_attempts, default: 0, null: false # Only if lock strategy is :failed_attempts
@@ -42,8 +42,8 @@ class AddDeviseToUsers < ActiveRecord::Migration[6.1]
     end
 
     remove_column :users, :password_digest
-    change_column :users, :name, :string, null: false, default: ""
-    change_column :users, :email, :string, null: false, default: ""
+    change_column :users, :name, :string, null: false, default: ''
+    change_column :users, :email, :string, null: false, default: ''
 
     add_index :users, :email,                unique: true
     add_index :users, :reset_password_token, unique: true

@@ -49,7 +49,7 @@ ru:
       year: "Год"
       git_page: "Страница на гитхабе"
       author: "Автор"
-      name: "Крупени Николай"
+      name: "Крупенин Николай"
       school: "Онлайн-школа"
       about: "Учебный проект в онлайн-школе Thinknetica."
     admin:
@@ -77,6 +77,7 @@ ru:
       test_passed: "Тест пройден успешно"
       test_failed: "Тест не пройден"
       back_to_tests: "Вернуться к тестам"
+      feedback: "Отправить отзыв"
     show:
       passing: "Прохождение"
       test: "теста"
@@ -138,6 +139,15 @@ ru:
   tests_mailer:
     completed_test:
       subject: "Вы успешно завершили тест на TestGuru!"
+
+  feedbacks_mailer:
+    feedback:
+      subject: "Отзыв на тест"
+
+  feedbacks:
+    create:
+      success: "Отклик успешно отправлен"
+      error: "Напишите отклик!!"
 
   categories:
     Unix: "Юникс"
