@@ -1,0 +1,22 @@
+databases:
+  - name: think_postgresql
+    databaseName: render_deploy
+    user: nw
+    ipAllowList: []
+
+services:
+  - type: web
+    name: guru_mail_tests
+    plan: free
+    env: ruby
+    buildCommand: "./bin/render-build.sh"
+    startCommand: bundle exec rails s
+    envVars:
+      - key: DATABASE_URL
+        sync: false
+      - key:
+        fromDatabase:
+          name: think_postgresql
+          property: connectionString
+      - key: RAILS_MASTER_KEY
+

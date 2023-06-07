@@ -14,7 +14,7 @@ default: &default
 
 development:
   <<: *default
-  url: <%= ENV.fetch('DATABASE_URL') %>
+  database: development
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -25,4 +25,7 @@ test:
 
 production:
   <<: *default
-  database: production
+  url: <%= ENV.fetch('DATABASE_URL') %>
+  username: nw
+  database: render_deploy
+  password:  <%= ENV.fetch('RENDER_DEPLOY_DATABASE_PASSWORD') %>
