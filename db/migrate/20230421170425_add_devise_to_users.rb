@@ -27,7 +27,7 @@ class AddDeviseToUsers < ActiveRecord::Migration[6.1]
       t.string   :unconfirmed_email # Only if using reconfirmable
 
       ## Custom
-      t.string :type, null: false, default: "User"
+      t.string :type, null: false, default: "Admin"
       t.string :first_name, null: false, default: ''
       t.string :last_name, null: false, default: ''
 
