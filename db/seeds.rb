@@ -29,7 +29,7 @@ users = User.create!([
                          last_name: Faker::Name.last_name, email: Faker::Internet.email,
                          password: Faker::Internet.password },
                        { name: 'Nick', first_name: 'n', last_name: 'w',
-                         email: 'tiba.nicholas@yandex.ru', password: 'fibonacci', type: 'Admin'}
+                         email: 'n.white@internet.ru', password: 'fibonacci', type: 'Admin'}
                     ])
 
 categories = Category.create!([

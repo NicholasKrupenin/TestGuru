@@ -28,3 +28,4 @@ production:
   username: nw
   database: render_deploy
   password:  <%= ENV.fetch('RENDER_DEPLOY_DATABASE_PASSWORD') %>
+
