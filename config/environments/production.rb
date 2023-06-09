@@ -66,15 +66,19 @@ Rails.application.configure do
   config.action_mailer.perform_deliveries = true
   config.action_mailer.perform_caching = false
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.default_url_options = { host: 'smtp.yandex.ru', from: 'https://guru-mail-tests.onrender.com' }
+  config.action_mailer.default_url_options = { host: 'https://guru-mail-tests.onrender.com' }
   config.action_mailer.smtp_settings = {
-    address: 'https://guru-mail-tests.onrender.com',
+    enable: true,
+    address: 'smtp.yandex.ru',
+    domain: 'yandex.ru',
     port: 465,
     user_name: ENV.fetch('YANDEX_USERNAME'),
     password: ENV.fetch('YANDEX_PASSWORD'),
-    authentication: 'plain',
-    enable_starttls_auto: true,
-    ssl: true
+    authentication: 'login',
+    email_from: 'login@yandex.ru',
+    enable_starttls_auto: false,
+    ssl: true,
+    openssl_verify_mode: 'peer'
   }
 
   # Ignore bad email addresses and do not raise email delivery errors.
