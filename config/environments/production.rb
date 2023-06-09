@@ -77,25 +77,6 @@ Rails.application.configure do
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "TestGuru_production"
 
-  config.action_mailer.raise_delivery_errors = true
-  config.action_mailer.perform_deliveries = true
-  config.action_mailer.perform_caching = false
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.default_url_options = { host: 'https://guru-mail-tests.onrender.com' }
-  config.action_mailer.smtp_settings = {
-    enable: true,
-    address: 'smtp.yandex.ru',
-    domain: 'yandex.ru',
-    port: 465,
-    user_name: ENV.fetch('YANDEX_USERNAME'),
-    password: ENV.fetch('YANDEX_PASSWORD'),
-    authentication: 'login',
-    email_from: 'login@yandex.ru',
-    enable_starttls_auto: false,
-    ssl: true,
-    openssl_verify_mode: 'peer'
-  }
-
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # config.action_mailer.raise_delivery_errors = false
