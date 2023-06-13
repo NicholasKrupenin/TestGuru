@@ -7,6 +7,7 @@ ru:
     create: "Создать"
     read: "Просмотр"
     update: "Редактировать"
+    logout: "Выйти"
     delete: "Удалить"
     delete_confirm: "Вы уверены?"
 
@@ -36,6 +37,14 @@ ru:
       answer:
         text: "Текст ответа"
         correct: "Корректно"
+      user:
+        name: "Псевдоним"
+        first_name: "Имя"
+        last_name: "Фамилия"
+        email: "Почта"
+        password: "Пароль"
+        password_confirmation: "Подтверждение пароля"
+        remember_me: "Запомнить меня"
     prompts:
       Unix: "Юникс"
 
@@ -54,6 +63,9 @@ ru:
       about: "Учебный проект в онлайн-школе Thinknetica."
     admin:
       panel: "Панель администратора"
+    header:
+      welcome: "Добро пожаловать"
+      to: "в"
     errors:
       header:
         few: "Обнаружено %{count} ошибки"
@@ -105,8 +117,8 @@ ru:
         edit_test: "Изменить тест"
     nav:
       welcome: "Добро пожаловать"
-      logout: "Выйти"
       show_gist: "Показать Гист"
+      admin_panel: "Панель администратора"
 
     questions:
       new:

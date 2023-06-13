@@ -6,6 +6,8 @@
 #
 default: &default
   adapter: postgresql
+  username: <%= ENV.fetch("PGUSER") %>
+  password: <%= ENV.fetch("PGPASSWORD") %>
   encoding: unicode
   host: localhost
   pool: 5
@@ -24,8 +26,3 @@ test:
 production:
   <<: *default
   database: production
-  url: <%= ENV.fetch('DATABASE_URL') %>
-  username: nw
-  database: render_deploy
-  password:  <%= ENV.fetch('RENDER_DEPLOY_DATABASE_PASSWORD') %>
-

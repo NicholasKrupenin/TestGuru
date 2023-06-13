@@ -1,9 +1,13 @@
 <div class="navbar navbar-light bg-light">
   <span class="navbar-text">
-    Welcome, <% if user_signed_in? %>
-      <%= mail_name(current_user.email) %> <%= link_to "Logout", destroy_user_session_path, method: :delete, class: :button %>
+    <%= t('.welcome') %> <% if user_signed_in? %>
+      <%= mail_name(current_user.email) %> 
+      <%= link_to t(:logout, scope: :base), destroy_user_session_path,
+                                                                 method: :delete, class: :button %>
     <% else %>
-      to <%= link_to "TestGuru", root_path %> |<%= link_to "Signin", new_user_registration_path %>|<%= link_to "Login", new_user_session_path %>
+      <%= t('.to') %> <%= link_to "TestGuru", root_path %> 
+      | <%= link_to t(:sign_up, scope: "devise.registrations.new"), new_user_registration_path %>
+      | <%= link_to t(:login, scope: "devise.sessions.new"), new_user_session_path %>
     <% end %>
   </span>
 </div>
