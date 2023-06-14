@@ -78,7 +78,7 @@ en:
       year: "Year"
       git_page: "Git page"
       author: "Author"
-      name: "Krupeni Nikolay"
+      name: "Krupenin Nikolay"
       school: "Online school"
       about: "Training project in the online school Thinknetica."
     admin:
@@ -104,6 +104,7 @@ en:
       test_passed: "Test passed"
       test_failed: "Test failed"
       back_to_tests: "Back to tests"
+      feedback: "Feedback"
     show:
       passing: "Passing test"
       test: "test"
@@ -163,6 +164,15 @@ en:
   tests_mailer:
     completed_test:
       subject: "You have completed the test!"
+
+  feedbacks_mailer:
+    feedback:
+      subject: "Feedback"
+
+  feedbacks:
+    create:
+      success: "Response was successfully sent"
+      error: "Write a response!!"
 
   categories:
     Unix: "Unix"

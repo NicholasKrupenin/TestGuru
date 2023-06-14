@@ -1,12 +1,10 @@
-document.addEventListener('turbolinks:load', function() {
-  if (document.querySelectorAll('.table-patch-link')) { new FormInline() }
+document.addEventListener('turbolinks:load', () => {
+  if (document.querySelectorAll('.table-patch-link')) { new FormInline(); }
 })
 
 class FormInline {
   constructor() {
     this.links = document.querySelectorAll('.table-patch-link')
-    this.formInline = document.querySelector('.form-inline')
-    this.testTitle = document.querySelector('.test-title')
     this.bindEvents()
   }
 
@@ -17,8 +15,15 @@ class FormInline {
   }
 
   formInlineLinkHandler(event) {
-    event.preventDefault()
-    this.formInline.classList.toggle('hide')
-    this.testTitle.classList.toggle('hide')
+    event.preventDefault();
+    let testId = event.target.dataset.testId;
+    this.formInlineHandler(testId);
+  }
+
+  formInlineHandler(testId) {
+    let title = document.querySelector('.test-title[data-test-id="' + testId + '"]')
+    let formInline = document.querySelector('.form-inline[data-test-id="' + testId + '"]')
+    formInline.classList.toggle('hide')
+    title.classList.toggle('hide')
   }
 }

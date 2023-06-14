@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
+  get 'feedbacks/new'
+  get 'feedbacks/create'
     root to: 'tests#index'
 
     devise_for :users, path: :gurus, path_names: { sign_in: :login, sign_out: :logout },
                                                         controllers: { sessions: 'users/sessions' }
+
+    resources :feedbacks, only: %i[new create]
 
     resources :tests, only: :index do
       post :start, on: :member

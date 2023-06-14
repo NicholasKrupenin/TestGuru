@@ -9,3 +9,5 @@
 <p> <%= "#{t('.result')}: %.0f" % @test_passage.test_ratio %>% </p>
 
 <%= link_to t('.back_to_tests'), root_path, class: 'btn btn-primary' %>
+
+<%= link_to t('.feedback'), new_feedback_path, class: 'btn btn-primary' %>
