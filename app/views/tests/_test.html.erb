@@ -1,6 +1,6 @@
 <tbody>
   <tr>
-    <td><%= test.title %></td>
+    <td><%= test.title %> <%= badge_appear(current_user) %> </td>
     <td><%= test.questions.count %></td>
     <td><%= button_to t('.start'), start_test_path(test), class: 'btn btn-outline-primary' %></td>
   </tr>

@@ -7,7 +7,7 @@ module ApplicationHelper
     end
   end
 
-  def github_url(author, repo, html_options = {rel: 'nofollow', rel: 'noopener'})
+  def github_url(author, repo, html_options = { rel: 'nofollow noopener' })
     link_to repo.to_s, "https://github.com/#{author}/#{repo}", html_options
   end
 
@@ -21,5 +21,15 @@ module ApplicationHelper
 
   def mail_name(mail)
     mail.split('@').first
+  end
+
+  def badge_appear(user)
+    Badge.badge_return_hash.map do |badge_name, badge_url|
+      user.badges.map do |name, _value|
+        if badge_name == name
+          image_tag("#{badge_url}", alt: "#{badge_name}", width: 30, height: 30)
+        end
+      end
+    end.join.html_safe
   end
 end
