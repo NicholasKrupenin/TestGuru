@@ -66,6 +66,7 @@ ru:
     header:
       welcome: "Добро пожаловать"
       to: "в"
+      my_badge: "Мои бэйджи"
     errors:
       header:
         few: "Обнаружено %{count} ошибки"
@@ -141,6 +142,16 @@ ru:
         user: "Пользователь"
       gist:
         delete: "Удалить"
+
+    badges:
+      edit:
+        header: "Редактирование"
+      index:
+        header: "Все бэйджи"
+        badge: "Бэйджи"
+        rule: "Правила"
+        todo: "Действия"
+        count: "Количество"
 
     answers:
       show:
