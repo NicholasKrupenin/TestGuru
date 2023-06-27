@@ -1,0 +1,11 @@
+<tbody>
+  <tr>
+    <td><%= image_tag("#{badge.image_url}", width: 30, height: 30) %></td>
+    <td><%= "#{badge.rule}(#{badge.rule_value})"%></td>
+    <td><%= link_to t(:update, scope: :base), edit_admin_badge_path(badge),
+                     class: 'btn btn-outline-primary' %>
+        <%= link_to t(:delete, scope: :base), admin_badge_path(badge), method: :delete,
+          class: 'btn btn-outline-primary', data: { confirm: t(:delete_confirm, scope: :base) } %>
+    </td>
+  </tr>
+</tbody>

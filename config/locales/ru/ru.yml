@@ -119,6 +119,7 @@ ru:
       welcome: "Добро пожаловать"
       show_gist: "Показать Гист"
       admin_panel: "Панель администратора"
+      show_badge: "Бэйджи"
 
     questions:
       new:

@@ -2,6 +2,7 @@ ru:
   activerecord:
     models:
       test: "Тест"
+      badge: "Бэйдж"
 
     attributes:
       test:

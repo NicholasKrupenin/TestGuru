@@ -5,6 +5,8 @@ class TestPassage < ApplicationRecord
 
   before_validation :before_validation_set_current_question, on: %i[create update]
 
+  delegate :level, to: :test
+
   SUCCESS_RATIO = 85
 
   def completed?
@@ -21,7 +23,12 @@ class TestPassage < ApplicationRecord
   end
 
   def successful?
-    test_ratio >= SUCCESS_RATIO
+    if test_ratio >= SUCCESS_RATIO
+      update(success: true) if success == false
+      true
+    else
+      false
+    end
   end
 
   def current_question_number

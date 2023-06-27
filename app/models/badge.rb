@@ -1,18 +1,11 @@
 class Badge < ApplicationRecord
+  has_many :user_badges, dependent: :destroy
+  has_many :users, through: :user_badges
 
-  validates :name, presence: true, uniqueness: { scope: :name, message: 'Name already exists' }
+  validates :rule, presence: true, uniqueness: { scope: :rule, message: "Name already exists" }
   validates :image_url, presence: true,
-                            uniqueness: { scope: :image_url, message: 'Image_url already exists' },
+                            uniqueness: { scope: :image_url, message: "Image_url already exists" },
                             format: { with: URI::DEFAULT_PARSER.make_regexp(%w[http https]),
-                                                                message: 'Image_url is invalid' }
-
-  BADGE_RULE = %w[first level category].freeze
-
-  def self.get_badge(badge_name)
-    Badge.find_by(name: badge_name)
-  end
-
-  def self.badge_return_hash
-    Badge.all.map { |badge| [badge.name, badge.image_url] }.to_h
-  end
+                                                                message: "Image_url is invalid" }
+  validates :rule_value, presence: true
 end

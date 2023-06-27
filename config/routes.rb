@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   resources :feedbacks, only: %i[new create]
 
+  resources :badges, only: :index
+
   resources :tests, only: :index do
     post :start, on: :member
   end
@@ -17,11 +19,12 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :tests, shallow: true do
-    patch :update_inline, on: :member
+      patch :update_inline, on: :member
       resources :questions, except: :index do
         resources :answers, except: :index
       end
     end
     resources :gists, only: %i[index destroy]
+    resources :badges, except: :show
   end
 end

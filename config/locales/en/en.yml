@@ -132,6 +132,7 @@ en:
       welcome: "Welcome"
       logout: "Logout"
       show_gist: "Show Gists"
+      show_badge: "Badge"
 
     questions:
       new:

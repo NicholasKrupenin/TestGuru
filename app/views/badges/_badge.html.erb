@@ -1,0 +1,7 @@
+<tbody>
+  <tr>
+    <td><%= image_tag("#{badge.image_url}", width: 30, height: 30) %>
+        <%= "#{badge.rule}(#{badge.rule_value})" %></td>
+    <td><%= UserBadge.count_badge(current_user, badge) %></td>
+  </tr>
+</tbody>

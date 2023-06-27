@@ -13,7 +13,7 @@ Category.destroy_all
 Test.destroy_all
 Question.destroy_all
 Answer.destroy_all
-# TestUser.destroy_all
+Badge.destroy_all
 TestPassage.destroy_all
 
 users = User.create!([
@@ -79,7 +79,7 @@ answers = Answer.create!([
 #                               ])
 #
 badges = Badge.create!([
-                        { name: 'first', image_url: 'https://www.svgrepo.com/show/386930/badge-two.svg' },
-                        { name: 'level', image_url: 'https://www.svgrepo.com/show/387916/level.svg' },
-                        { name: 'category', image_url: 'https://www.svgrepo.com/show/386902/asterisk.svg' }
+                        { rule: 'first', image_url: 'https://www.svgrepo.com/show/386930/badge-two.svg', rule_value: 'true' },
+                        { rule: 'level', image_url: 'https://www.svgrepo.com/show/387916/level.svg', rule_value: '1' },
+                        { rule: 'category', image_url: 'https://www.svgrepo.com/show/386902/asterisk.svg', rule_value: 'Git' }
                       ])
