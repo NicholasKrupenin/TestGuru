@@ -5,7 +5,7 @@ class TestPassage < ApplicationRecord
 
   before_validation :before_validation_set_current_question, on: %i[create update]
 
-  delegate :level, to: :test
+  delegate :level, :timer, to: :test
 
   SUCCESS_RATIO = 85
 
