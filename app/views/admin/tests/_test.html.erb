@@ -11,5 +11,6 @@
         <%= link_to t('.start'), start_test_path(test), method: :post,
                                                            class: 'btn btn-outline-primary' %></td>
     <td><%= test.questions.count %></td>
+    <td><%= test.timer %></td>
   </tr>
 </tbody>

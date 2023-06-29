@@ -62,6 +62,7 @@ en:
         level: "Level"
         category_id: "Category"
         author_id: "Author"
+        timer: "Timer (second)"
       question:
         text: "Question"
       answer:
@@ -119,6 +120,7 @@ en:
         title: "Title"
         questions: "Questions"
         actions: "Actions"
+        timers: "Timer (second)"
       new:
         header: "New test"
       test:

@@ -32,6 +32,7 @@ ru:
         level: "Уровень"
         category_id: "Категория"
         author_id: "Автор"
+        timer: "Таймер (сек)"
       question:
         text: "Содержание вопроса"
       answer:
@@ -107,6 +108,7 @@ ru:
         title: "Название"
         questions: "Вопросы"
         actions: "Действия"
+        timers: "Таймер (сек)"
       new:
         header: "Создание нового теста"
       test:
