@@ -6,8 +6,7 @@ class Timer {
     this.timerTest = document.querySelector('.timer')
     this.timerTestName = 'Timer' + this.timerTest.getAttribute('data-test-name')
     this.displayElement = document.querySelector('.knock_knock')
-    this.timerElement = document.querySelector('.knock_knock')
-    this.timeDuration = this.timerElement.getAttribute('data-time-duration')
+    this.timeDuration = this.displayElement.getAttribute('data-time-duration')
     this.timer = null
     this.start()
   }
