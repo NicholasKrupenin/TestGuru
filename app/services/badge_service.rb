@@ -6,11 +6,7 @@ class BadgeService
   end
 
   def add_badge
-    return unless badge_grab.present?
-
-    badge_grab.each do |badge|
-      @user.badges.push(badge)
-    end
+    @user.badges.push(badge_grab)
   end
 
   private

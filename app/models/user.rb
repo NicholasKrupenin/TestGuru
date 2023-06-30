@@ -21,6 +21,6 @@ class User < ApplicationRecord
   end
 
   def success_tests
-    tests.where('test_passages.success = ?', true)
+    tests.where(success: true)
   end
 end
