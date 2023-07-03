@@ -1,0 +1,19 @@
+<%= form_with model: [:admin, @badge], method: verb do |form| %>
+  <%= render 'shared/errors', resource: @badge %>
+
+  <%= form.label :rule %>
+  <%= form.text_field :rule, id: :badge_rule %>
+
+  <%= form.label :image_url %>
+  <%= form.text_field :image_url, id: :badge_image_url %>
+  <%= image_tag("", width: 30, height: 30, class: 'hide', id: :badge_image_tag) %>
+
+  <%= form.label :rule_value %>
+  <%= form.text_field :rule_value, id: :badge_rule_value %>
+
+  <%= form.submit %>
+<% end %>
+
+<br>
+
+<%= link_to t(:back, scope: :base), admin_badges_path, class: 'btn btn-primary' %>

@@ -1,0 +1,13 @@
+<h1 class='text-center'><%= t(:header, scope: 'admin.badges.index') %></h1>
+
+<table class = "table table-striped table-bordered text-center">
+  <tr>
+    <th><b><%= t(:badge, scope: 'admin.badges.index') %></b></th>
+    <th><b><%= t(:count, scope: 'admin.badges.index') %></b></th>
+  </tr>
+
+  <%= render @badges %>
+
+</table>
+
+<%= link_to t(:back, scope: :base), root_path, class: 'btn btn-primary' %>

@@ -13,7 +13,8 @@ Category.destroy_all
 Test.destroy_all
 Question.destroy_all
 Answer.destroy_all
-#TestUser.destroy_all
+Badge.destroy_all
+TestPassage.destroy_all
 
 users = User.create!([
                        { name: Faker::Internet.username, first_name: Faker::Name.first_name,
@@ -76,3 +77,9 @@ answers = Answer.create!([
 #                                 { user: users[2], test: tests[2] },
 #                                 { user: users[3], test: tests[3] }
 #                               ])
+#
+badges = Badge.create!([
+                        { rule: 'first', image_url: 'https://www.svgrepo.com/show/386930/badge-two.svg', rule_value: true },
+                        { rule: 'level', image_url: 'https://www.svgrepo.com/show/387916/level.svg', rule_value: '1' },
+                        { rule: 'category', image_url: 'https://www.svgrepo.com/show/386902/asterisk.svg', rule_value: 'Git' }
+                      ])

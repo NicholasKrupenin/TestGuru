@@ -1,13 +1,13 @@
-<div class="navbar navbar-light bg-light">
-  <span class="navbar-text">
+<nav class="navbar navbar-light bg-light justify-content-center">
+  <span class="navbar-text ">
     <%= t('.welcome') %> <% if user_signed_in? %>
       <%= mail_name(current_user.email) %> 
-      <%= link_to t(:logout, scope: :base), destroy_user_session_path,
-                                                                 method: :delete, class: :button %>
+      <%= link_to t(:logout, scope: :base), destroy_user_session_path, method: :delete, class: "" %>
+      | <%= link_to t('.my_badge'), badges_path, class: "" %>
     <% else %>
       <%= t('.to') %> <%= link_to "TestGuru", root_path %> 
       | <%= link_to t(:sign_up, scope: "devise.registrations.new"), new_user_registration_path %>
       | <%= link_to t(:login, scope: "devise.sessions.new"), new_user_session_path %>
     <% end %>
   </span>
-</div>
+</nav>
