@@ -23,12 +23,11 @@ class TestPassage < ApplicationRecord
   end
 
   def successful?
-    if test_ratio >= SUCCESS_RATIO
-      update(success: true) if success == false
-      true
-    else
-      false
-    end
+    test_ratio >= SUCCESS_RATIO
+  end
+
+  def update_success
+    update(success: successful?) if successful?
   end
 
   def current_question_number

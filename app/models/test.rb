@@ -26,8 +26,4 @@ class Test < ApplicationRecord
   def self.by_category(category)
     tests_by_category(category).pluck(:title)
   end
-
-  def self.category_for_badge(arg)
-    where(category: arg)
-  end
 end

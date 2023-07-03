@@ -17,10 +17,10 @@ class User < ApplicationRecord
   end
 
   def test_passage(test)
-    test_passages.order(id: :desc).find_by(test_id: test.id)
+    test_passages.order(id: :desc).find_by(test_id: test)
   end
 
-  def success_tests
-    tests.where(success: true)
+  def tests_success
+    test_passages.joins(:test).where(success: true)
   end
 end

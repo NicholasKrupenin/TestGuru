@@ -79,7 +79,7 @@ answers = Answer.create!([
 #                               ])
 #
 badges = Badge.create!([
-                        { rule: 'first', image_url: 'https://www.svgrepo.com/show/386930/badge-two.svg', rule_value: 'true' },
+                        { rule: 'first', image_url: 'https://www.svgrepo.com/show/386930/badge-two.svg', rule_value: true },
                         { rule: 'level', image_url: 'https://www.svgrepo.com/show/387916/level.svg', rule_value: '1' },
                         { rule: 'category', image_url: 'https://www.svgrepo.com/show/386902/asterisk.svg', rule_value: 'Git' }
                       ])
