@@ -4,15 +4,13 @@ document.addEventListener('turbolinks:load', () => {
 class Timer {
   constructor() {
     this.timerTest = document.querySelector('.timer')
-    this.timerTestName = 'Timer' + this.timerTest.getAttribute('data-test-name')
     this.displayElement = document.querySelector('.knock_knock')
     this.timeDuration = this.displayElement.getAttribute('data-time-duration')
-    this.timer = null
     this.start()
   }
 
   start() {
-    let timer = localStorage.getItem(this.timerTestName) || this.timeDuration
+    let timer = parseInt(this.timeDuration) - Math.floor(Date.now()/1000)
     this.timer = setInterval(() => {
       let minutes = parseInt(timer / 60, 10)
       let seconds = parseInt(timer % 60, 10)
@@ -23,17 +21,8 @@ class Timer {
       this.displayElement.textContent = minutes + ":" + seconds
 
       if (--timer < 0) {
-        localStorage.removeItem(this.timerTestName)
-        this.stop()
-      } else {
-        localStorage.setItem(this.timerTestName, timer)
+        document.querySelector('form').submit()
       }
     }, 1000)
-  }
-
-  stop() {
-    clearInterval(this.timer)
-    this.timer = null
-    window.location.href = this.displayElement.getAttribute('data-waste-url')
   }
 }

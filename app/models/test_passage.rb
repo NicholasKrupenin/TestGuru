@@ -10,7 +10,7 @@ class TestPassage < ApplicationRecord
   SUCCESS_RATIO = 85
 
   def completed?
-    current_question.nil?
+    time_expired? || current_question.nil?
   end
 
   def accept!(answer_ids)
@@ -36,6 +36,14 @@ class TestPassage < ApplicationRecord
 
   def total_questions
     test.questions.count
+  end
+
+  def deadline_time
+    created_at.to_i + timer
+  end
+
+  def time_expired?
+    Time.current.to_i > deadline_time
   end
 
   private

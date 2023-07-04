@@ -1,7 +1,6 @@
 <% unless @test_passage.timer.zero? %>
   <%= content_tag(:div, class: "timer text-center h2",
                   data: {timer_test: @test_passage.test.title}) do %>
-    <%= tag.span class: "knock_knock", data: {time_duration: @test_passage.timer,
-                                              waste_url: result_test_passage_path(@test_passage)} %>
+    <%= tag.span class: "knock_knock", data: {time_duration: @test_passage.deadline_time} %>
   <% end %>
 <% end %>
