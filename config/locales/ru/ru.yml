@@ -113,6 +113,7 @@ ru:
         header: "Создание нового теста"
       test:
         start: "Старт"
+        full_editor: "Полный редактор теста"
       show:
         questions: "Вопросы"
         actions: "Действия"

@@ -5,6 +5,7 @@ document.addEventListener('turbolinks:load', () => {
 class FormInline {
   constructor() {
     this.links = document.querySelectorAll('.table-patch-link')
+
     this.bindEvents()
   }
 
@@ -23,7 +24,9 @@ class FormInline {
   formInlineHandler(testId) {
     let title = document.querySelector('.test-title[data-test-id="' + testId + '"]')
     let formInline = document.querySelector('.form-inline[data-test-id="' + testId + '"]')
+    let full_editor = document.querySelector('.full-editor[data-test-id="' + testId + '"]')
     formInline.classList.toggle('hide')
     title.classList.toggle('hide')
+    full_editor.classList.toggle('hide')
   }
 }
