@@ -5,12 +5,12 @@ class TestPassage < ApplicationRecord
 
   before_validation :before_validation_set_current_question, on: %i[create update]
 
-  delegate :level, to: :test
+  delegate :level, :timer, to: :test
 
   SUCCESS_RATIO = 85
 
   def completed?
-    current_question.nil?
+    time_expired? || current_question.nil?
   end
 
   def accept!(answer_ids)
@@ -36,6 +36,14 @@ class TestPassage < ApplicationRecord
 
   def total_questions
     test.questions.count
+  end
+
+  def deadline_time
+    created_at.to_i + timer
+  end
+
+  def time_expired?
+    Time.current.to_i > deadline_time
   end
 
   private

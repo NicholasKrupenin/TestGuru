@@ -1,5 +1,7 @@
 <h1><%= t('.passing') %> <%= t('.test') %> <%= @test_passage.test.title %></h1>
 
+<%= render 'timer' %>
+
 <div>
   <%= @test_passage.current_question.body %> ?
   [<%= @test_passage.current_question_number %> / <%= @test_passage.total_questions %>]
