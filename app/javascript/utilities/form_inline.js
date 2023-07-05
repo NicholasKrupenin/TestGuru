@@ -5,7 +5,6 @@ document.addEventListener('turbolinks:load', () => {
 class FormInline {
   constructor() {
     this.links = document.querySelectorAll('.table-patch-link')
-
     this.bindEvents()
   }
 
